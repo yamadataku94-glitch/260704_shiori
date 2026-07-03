@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#11343f">
+<title>高島BBQ旅 2026 旅のしおり</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Outfit:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F7F1E5;--paper-2:#FBF7EE;--ink:#22281E;--ink-soft:#5C6152;
+    --forest:#2E5E3A;--lake:#1C5C6B;--dusk:#11343f;
+    --ember:#DD6B1E;--ember-soft:#F2A65A;--gold:#F2C94C;
+    --line:#E2D8C5;--card:#FFFFFF;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{font-family:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN",sans-serif;
+    color:var(--ink);background:var(--paper);line-height:1.7;font-size:15px;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  .wrap{max-width:460px;margin:0 auto;background:var(--paper);position:relative}
+
+  /* HERO */
+  .hero{position:relative;padding:54px 26px 0;color:#F4EEDD;overflow:hidden;
+    background:
+      radial-gradient(1px 1px at 20% 22%,#fff8 50%,#fff0 51%),
+      radial-gradient(1px 1px at 64% 14%,#fff7 50%,#fff0 51%),
+      radial-gradient(1.4px 1.4px at 82% 30%,#fff9 50%,#fff0 51%),
+      radial-gradient(1px 1px at 38% 36%,#fff6 50%,#fff0 51%),
+      radial-gradient(1.2px 1.2px at 50% 10%,#fff8 50%,#fff0 51%),
+      linear-gradient(176deg,#0d2c36 0%,#11343f 32%,#1c5c6b 60%,#2e5e3a 86%,#356b3f 100%);}
+  .moon{position:absolute;top:40px;right:30px;width:46px;height:46px;border-radius:50%;
+    background:radial-gradient(circle at 38% 36%,#FFF6DA,#F2C94C 78%,#e0b13c);
+    box-shadow:0 0 30px 6px #f2c94c55;}
+  .eyebrow{font-family:"Outfit",sans-serif;font-weight:700;letter-spacing:.32em;font-size:11px;
+    text-transform:uppercase;color:var(--gold);display:inline-block;
+    border:1px solid #f2c94c66;border-radius:40px;padding:5px 14px;margin-bottom:20px;}
+  .hero h1{font-family:"Zen Maru Gothic",sans-serif;font-weight:700;font-size:46px;
+    line-height:1.06;letter-spacing:.01em;text-shadow:0 2px 14px #00000033;}
+  .hero h1 .small{display:block;font-size:25px;margin-top:6px;color:#cfe6da}
+  .datestamp{font-family:"Outfit",sans-serif;font-weight:700;font-size:19px;
+    letter-spacing:.04em;margin-top:18px;color:#fff;}
+  .datestamp .arw{color:var(--ember-soft);margin:0 6px}
+  .herodesc{margin-top:12px;font-size:13.5px;color:#dfe9dd;max-width:30ch}
+  .hills{display:block;width:100%;margin-top:24px;margin-bottom:-1px}
+
+  /* FACTS */
+  .facts{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
+    background:var(--line);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .fact{background:var(--paper-2);padding:15px 8px;text-align:center}
+  .fact .l{font-size:10px;letter-spacing:.16em;color:var(--ink-soft);font-weight:700}
+  .fact .v{font-family:"Zen Maru Gothic",sans-serif;font-weight:700;font-size:15px;
+    margin-top:5px;color:var(--forest)}
+  .fact .v small{font-size:11px;color:var(--ink-soft);font-weight:500}
+
+  /* NAV */
+  nav{position:sticky;top:0;z-index:30;background:rgba(247,241,229,.93);
+    backdrop-filter:blur(8px);border-bottom:1px solid var(--line);
+    display:flex;gap:8px;overflow-x:auto;padding:11px 18px;scrollbar-width:none;}
+  nav::-webkit-scrollbar{display:none}
+  nav a{flex:0 0 auto;font-size:12.5px;font-weight:700;color:var(--ink-soft);
+    text-decoration:none;padding:6px 13px;border-radius:30px;
+    border:1px solid var(--line);background:#fff;white-space:nowrap;}
+  nav a:active{background:var(--forest);color:#fff;border-color:var(--forest)}
+
+  /* SECTION */
+  section{padding:34px 22px 8px}
+  .shead{display:flex;align-items:baseline;gap:11px;margin-bottom:18px}
+  .shead .no{font-family:"Outfit",sans-serif;font-weight:700;font-size:13px;
+    color:#fff;background:var(--ember);border-radius:8px;padding:2px 8px;
+    line-height:1.5;letter-spacing:.04em;}
+  .shead h2{font-family:"Zen Maru Gothic",sans-serif;font-weight:700;font-size:21px;color:var(--ink)}
+  .shead .jp{font-size:11px;color:var(--ink-soft);letter-spacing:.15em;margin-top:2px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;
+    padding:18px;box-shadow:0 4px 18px #2a2a1a08;}
+  .card+.card{margin-top:12px}
+  .kv{display:flex;gap:10px;padding:7px 0;font-size:14px;border-bottom:1px dashed var(--line)}
+  .kv:last-child{border-bottom:0}
+  .kv .k{flex:0 0 84px;color:var(--ink-soft);font-weight:700;font-size:12.5px}
+  .kv .val{flex:1}
+  .kv .val b{color:var(--forest)}
+  .btn{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;
+    text-decoration:none;color:#fff;background:var(--lake);border-radius:30px;
+    padding:8px 15px;margin-top:4px;}
+  .btn.air{background:var(--ember)}
+  .btn:active{transform:translateY(1px)}
+
+  /* TIMELINE */
+  .daytab{display:inline-block;font-family:"Zen Maru Gothic",sans-serif;font-weight:700;
+    font-size:14px;color:#fff;padding:6px 16px;border-radius:30px 30px 0 0;margin-top:6px;}
+  .d1{background:var(--lake)}.d2{background:var(--forest)}
+  .tl{position:relative;border-left:2px solid var(--line);margin-left:46px;padding:14px 0 4px}
+  .stop{position:relative;padding:0 0 22px 22px}
+  .stop:last-child{padding-bottom:6px}
+  .time{position:absolute;left:-46px;top:-3px;width:40px;text-align:right;
+    font-family:"Outfit",sans-serif;font-weight:700;font-size:13px;color:var(--ink);}
+  .dot{position:absolute;left:-7px;top:3px;width:12px;height:12px;border-radius:50%;
+    background:#fff;border:2px solid var(--lake)}
+  .stop.eat .dot{background:var(--ember);border-color:var(--ember);box-shadow:0 0 0 4px #dd6b1e22}
+  .d2wrap .dot{border-color:var(--forest)}
+  .d2wrap .stop.eat .dot{background:var(--ember);border-color:var(--ember)}
+  .stop h4{font-size:15px;font-weight:700;font-family:"Zen Maru Gothic",sans-serif}
+  .stop p{font-size:12.5px;color:var(--ink-soft);margin-top:2px}
+  .stop .maplink{font-size:12px;font-weight:700;color:var(--lake);text-decoration:none;
+    display:inline-block;margin-top:4px;}
+  .stop .maplink:before{content:"📍 "}
+  .flame{color:var(--ember)}
+
+  /* BUDGET */
+  .bcat-hdr{display:flex;justify-content:space-between;align-items:center;
+    padding:10px 14px;border-radius:10px;margin-bottom:2px;cursor:pointer;}
+  .bcat-hdr .nm{font-family:"Zen Maru Gothic",sans-serif;font-weight:700;font-size:14px;color:#fff}
+  .bcat-hdr .sub{font-size:11px;color:rgba(255,255,255,.75);margin-top:1px}
+  .bcat-hdr .amt{text-align:right}
+  .bcat-hdr .amt .pp{font-family:"Outfit",sans-serif;font-size:16px;font-weight:700;color:#fff}
+  .bcat-hdr .amt .label{font-size:10px;color:rgba(255,255,255,.7)}
+  .bcat-detail{background:#fff;border:1px solid var(--line);border-radius:0 0 10px 10px;
+    margin-bottom:12px;overflow:hidden;}
+  .bcat-row{display:flex;justify-content:space-between;align-items:center;
+    padding:9px 14px;font-size:13px;border-bottom:1px dashed var(--line);}
+  .bcat-row:last-child{border-bottom:0}
+  .bcat-row .rn{color:var(--ink-soft)}
+  .bcat-row .rv{font-family:"Outfit",sans-serif;font-weight:700;font-size:13px}
+  .btotal{display:flex;justify-content:space-between;align-items:baseline;
+    padding:18px 14px;background:var(--ink);border-radius:12px;margin-top:4px;}
+  .btotal .tl-{font-family:"Zen Maru Gothic",sans-serif;font-weight:700;font-size:15px;color:#fff}
+  .btotal .tr{text-align:right}
+  .btotal .tr .big{font-family:"Outfit",sans-serif;font-weight:700;font-size:26px;color:var(--ember-soft)}
+  .btotal .tr .sm{font-size:11px;color:rgba(255,255,255,.6);margin-top:2px}
+  .collect-box{margin-top:10px;padding:14px;background:#eef4ef;border-radius:12px;
+    border:1px solid #aecdb5;}
+  .collect-box .ch{font-family:"Zen Maru Gothic",sans-serif;font-weight:700;
+    font-size:13px;color:var(--forest);margin-bottom:8px;}
+  .collect-row{display:flex;justify-content:space-between;font-size:13px;padding:3px 0}
+  .collect-row b{font-family:"Outfit",sans-serif;font-weight:700}
+  .collect-row.big b{font-size:18px;color:var(--ember)}
+
+  /* CHECKLIST */
+  .grouplabel{font-family:"Zen Maru Gothic",sans-serif;font-weight:700;font-size:13px;
+    color:var(--lake);margin:14px 0 6px;display:flex;align-items:center;gap:7px}
+  .grouplabel:first-child{margin-top:0}
+  .grouplabel .em{width:7px;height:7px;border-radius:2px;background:var(--ember)}
+  ul.check{list-style:none}
+  ul.check li{display:flex;align-items:flex-start;gap:11px;padding:9px 2px;
+    font-size:14px;border-bottom:1px solid #efe8d8;cursor:pointer;user-select:none;}
+  ul.check li .box{flex:0 0 20px;width:20px;height:20px;margin-top:1px;
+    border:2px solid #c9bfa8;border-radius:6px;position:relative;transition:.15s;}
+  ul.check li.done .box{background:var(--forest);border-color:var(--forest)}
+  ul.check li.done .box:after{content:"";position:absolute;left:5.5px;top:1.5px;
+    width:5px;height:10px;border:solid #fff;border-width:0 2.5px 2.5px 0;transform:rotate(43deg)}
+  ul.check li.done .txt{text-decoration:line-through;color:#b3a98f}
+  .txt b{color:var(--ember);font-weight:700}
+  .provided{background:#eef4ef;border:1px dashed #aecdb5;border-radius:14px;
+    padding:14px 16px;margin-top:14px;}
+  .provided .h{font-family:"Zen Maru Gothic",sans-serif;font-weight:700;
+    font-size:13px;color:var(--forest);margin-bottom:6px;}
+  .provided p{font-size:12.5px;color:#48604f;line-height:1.7}
+
+  /* SPOTS */
+  .spot{display:flex;align-items:center;gap:13px;padding:13px 4px;
+    border-bottom:1px solid var(--line);text-decoration:none;color:inherit}
+  .spot:last-child{border-bottom:0}
+  .spot .ic{flex:0 0 40px;width:40px;height:40px;border-radius:12px;
+    display:grid;place-items:center;font-size:19px;background:#eef4ef;}
+  .spot .nm{font-weight:700;font-size:14.5px;font-family:"Zen Maru Gothic",sans-serif}
+  .spot .ds{font-size:12px;color:var(--ink-soft)}
+  .spot .go{margin-left:auto;color:var(--lake);font-weight:700;font-size:18px}
+
+  /* TODO */
+  .todo-item{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}
+  .todo-item:last-child{border-bottom:0}
+  .todo-pri{flex:0 0 auto;font-size:10px;font-weight:700;padding:3px 8px;border-radius:20px;
+    margin-top:2px;white-space:nowrap;}
+  .pri-high{background:#fde8e8;color:#c0392b}
+  .pri-mid{background:#fff3cd;color:#856404}
+  .todo-body .tt{font-weight:700;font-size:14px;font-family:"Zen Maru Gothic",sans-serif}
+  .todo-body .dl{font-size:11px;color:var(--ink-soft);margin-top:2px}
+  .todo-body .nt{font-size:12px;color:var(--ink-soft);margin-top:4px;line-height:1.6}
+
+  /* TIPS */
+  .tip{display:flex;gap:11px;padding:11px 0;border-bottom:1px dashed var(--line);font-size:13.5px}
+  .tip:last-child{border-bottom:0}
+  .tip .mk{flex:0 0 26px;font-size:18px}
+  .tip b{color:var(--ember)}
+
+  /* TRANSPORT INFO */
+  .share-badge{display:inline-flex;align-items:center;gap:6px;background:#e8f4fb;
+    border:1px solid #aad4e8;border-radius:30px;padding:5px 12px;
+    font-size:12px;font-weight:700;color:var(--lake);margin-top:8px;}
+
+  footer{padding:34px 22px 48px;text-align:center;color:var(--ink-soft)}
+  footer .logo{font-family:"Zen Maru Gothic",sans-serif;font-weight:700;
+    color:var(--forest);font-size:16px;}
+  footer .meta{font-size:11px;margin-top:8px;letter-spacing:.05em}
+  footer .star{color:var(--gold);letter-spacing:.3em;font-size:13px;margin-bottom:14px}
+
+  .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+  a{-webkit-tap-highlight-color:transparent}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<!-- HERO -->
+<header class="hero">
+  <div class="moon"></div>
+  <span class="eyebrow">1泊2日 ・ 男7人旅</span>
+  <h1>高島BBQ旅<span class="small">グリーン・ビュー・ロッジ</span></h1>
+  <div class="datestamp">2026. 7.3 <span class="arw">FRI →</span> 7.4 SAT</div>
+  <p class="herodesc">琵琶湖と箱館山の間。約45㎡のウッドデッキで、炭火を囲む夏の一夜。</p>
+  <svg class="hills" viewBox="0 0 460 70" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,70 L0,40 Q70,8 150,30 Q230,52 320,22 Q400,-2 460,28 L460,70 Z" fill="#356b3f"/>
+    <path d="M0,70 L0,52 Q90,30 200,48 Q320,66 460,46 L460,70 Z" fill="#2e5e3a"/>
+  </svg>
+</header>
+
+<!-- QUICK FACTS -->
+<div class="facts">
+  <div class="fact"><div class="l">STAY</div><div class="v">ログハウス<br><small>まるごと貸切</small></div></div>
+  <div class="fact"><div class="l">MOVE</div><div class="v">カーシェア<br><small>大阪発・1台</small></div></div>
+  <div class="fact"><div class="l">集金額</div><div class="v">¥19,000<br><small>/ 1人</small></div></div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="#info">基本情報</a>
+  <a href="#move">移動</a>
+  <a href="#plan">行程</a>
+  <a href="#budget">予算</a>
+  <a href="#buy">買い出し</a>
+  <a href="#pack">持ち物</a>
+  <a href="#spot">地図</a>
+  <a href="#todo">TODO</a>
+  <a href="#tips">注意</a>
+</nav>
+
+<!-- INFO -->
+<section id="info" class="reveal">
+  <div class="shead"><span class="no">01</span><div><h2>基本情報</h2><div class="jp">THE LODGE</div></div></div>
+  <div class="card">
+    <div class="kv"><div class="k">宿</div><div class="val"><b>グリーン・ビュー・ロッジ</b><br>1棟まるまる貸切・寝室2／布団8組</div></div>
+    <div class="kv"><div class="k">所在地</div><div class="val">滋賀県高島市（今津・箱館山エリア）</div></div>
+    <div class="kv"><div class="k">時間</div><div class="val">IN <b>15:00</b> ／ OUT <b>10:00</b></div></div>
+    <div class="kv"><div class="k">宿泊費</div><div class="val"><b>¥68,740</b>（確定・全込み）</div></div>
+    <div class="kv"><div class="k">設備</div><div class="val">Weberコンロ・45㎡デッキ・Wi-Fi・Netflix・洗濯乾燥機・ホットサンドメーカー・ホットプレート</div></div>
+    <div class="kv"><div class="k">ホスト</div><div class="val">Tomokoさん（スーパーホスト ⭐4.97）</div></div>
+    <a class="btn air" href="https://www.airbnb.jp/rooms/1087917361799796755" target="_blank" rel="noopener">Airbnbページを開く ↗</a>
+  </div>
+</section>
+
+<!-- MOVE -->
+<section id="move" class="reveal">
+  <div class="shead"><span class="no">02</span><div><h2>移動</h2><div class="jp">CARSHARE</div></div></div>
+  <div class="card">
+    <div class="kv"><div class="k">手段</div><div class="val"><b>タイムズカーシェア</b>（プレミアムクラス）<br>セレナ・ノアなど 7〜8人乗り</div></div>
+    <div class="kv"><div class="k">会員</div><div class="val"><b>学生会員登録済み</b></div></div>
+    <div class="kv"><div class="k">出発</div><div class="val"><b>7/3(金) 10:30</b> 大阪</div></div>
+    <div class="kv"><div class="k">ルート</div><div class="val">吹田IC →〈名神〉→ 京都東IC → <b>湖西道路(無料)</b> → R161 → 近江今津</div></div>
+    <div class="kv"><div class="k">所要</div><div class="val">約1時間45分</div></div>
+    <div class="kv"><div class="k">料金</div><div class="val"><b>¥24,500</b>（2日間・200km見積）<br>ガソリン込み・満タン返し不要</div></div>
+    <div class="kv"><div class="k">高速</div><div class="val">吹田IC⇔京都東IC 往復 <b>¥1,800</b>（ETC）<br>※ETCカードは車載分を使用</div></div>
+    <span class="share-badge">⛽ ガソリン代込み</span>
+    <span class="share-badge" style="margin-left:6px">🔑 学生会員登録済み</span>
+  </div>
+</section>
+
+<!-- PLAN -->
+<section id="plan" class="reveal">
+  <div class="shead"><span class="no">03</span><div><h2>行程</h2><div class="jp">ITINERARY</div></div></div>
+
+  <span class="daytab d1">DAY 1 — 7/3 (金)</span>
+  <div class="card" style="border-top-left-radius:0">
+    <div class="tl">
+      <div class="stop"><span class="time">10:30</span><span class="dot"></span>
+        <h4>大阪を出発</h4><p>タイムズカーシェアで出発。給油不要。酔い止め持参推奨</p></div>
+      <div class="stop eat"><span class="time">12:30</span><span class="dot"></span>
+        <h4>近江今津で昼食</h4><p>近江ちゃんぽん・鯖そばなど湖西グルメ</p></div>
+      <div class="stop"><span class="time">13:30</span><span class="dot"></span>
+        <h4>平和堂 今津店で買い出し</h4><p>食材・炭・氷・酒をまとめて。9:30〜21:00</p>
+        <a class="maplink" href="https://maps.google.com/?cid=17231633910911759236" target="_blank" rel="noopener">地図で開く</a></div>
+      <div class="stop"><span class="time">15:00</span><span class="dot"></span>
+        <h4>チェックイン</h4><p>荷ほどき・寝室わりふり・クーラーボックスに氷</p></div>
+      <div class="stop"><span class="time">15:30</span><span class="dot"></span>
+        <h4>今津浜で琵琶湖の水遊び</h4><p>宿から車7分。透明度高めの穴場ビーチ</p>
+        <a class="maplink" href="https://maps.google.com/?cid=17188414135048750316" target="_blank" rel="noopener">地図で開く</a></div>
+      <div class="stop"><span class="time">17:00</span><span class="dot"></span>
+        <h4>炭おこし開始</h4><p>着火まで30〜40分。早めが正解</p></div>
+      <div class="stop eat"><span class="time">18:00</span><span class="dot"></span>
+        <h4><span class="flame">🔥</span> ウッドデッキでBBQ</h4><p>日没を見ながら乾杯。メインイベント</p></div>
+      <div class="stop"><span class="time">20:00</span><span class="dot"></span>
+        <h4>星空・ボードゲーム・宅飲み</h4><p>デッキで星見、Netflix・ミニコンポも可</p></div>
+    </div>
+  </div>
+
+  <div class="d2wrap" style="margin-top:18px">
+    <span class="daytab d2">DAY 2 — 7/4 (土)</span>
+    <div class="card" style="border-top-left-radius:0">
+      <div class="tl" style="border-color:#cfe0d3">
+        <div class="stop eat"><span class="time">7:30</span><span class="dot"></span>
+          <h4>起床・朝食</h4><p>余り食材でホットサンド・焼きそば（備品あり）</p></div>
+        <div class="stop"><span class="time">8:30</span><span class="dot"></span>
+          <h4>BBQ後片付け・掃除</h4><p>炭と灰は完全消火 → 灰バケツへ。コンロも洗う</p></div>
+        <div class="stop"><span class="time">10:00</span><span class="dot"></span>
+          <h4>チェックアウト</h4><p>厳守。忘れ物チェックを忘れずに</p></div>
+        <div class="stop"><span class="time">10:30</span><span class="dot"></span>
+          <h4>白髭神社</h4><p>琵琶湖の湖中大鳥居。帰り道沿い（南へ車25分）</p>
+          <a class="maplink" href="https://maps.google.com/?cid=13664484576260554187" target="_blank" rel="noopener">地図で開く</a></div>
+        <div class="stop eat"><span class="time">12:00</span><span class="dot"></span>
+          <h4>昼食 → 帰阪・解散</h4><p>時間が余ればメタセコイア並木へ寄り道も</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BUDGET -->
+<section id="budget" class="reveal">
+  <div class="shead"><span class="no">04</span><div><h2>予算</h2><div class="jp">7人 / 節約プラン</div></div></div>
+
+  <!-- 宿泊 -->
+  <div class="bcat-hdr" style="background:var(--lake)">
+    <div><div class="nm">🏠 宿泊</div><div class="sub">Airbnb確定</div></div>
+    <div class="amt"><div class="label">1人あたり</div><div class="pp">¥9,820</div></div>
+  </div>
+  <div class="bcat-detail">
+    <div class="bcat-row"><span class="rn">宿泊費（全込み・確定）</span><span class="rv">¥68,740</span></div>
+  </div>
+
+  <!-- BBQ・食事 -->
+  <div class="bcat-hdr" style="background:var(--forest)">
+    <div><div class="nm">🔥 BBQ・食事</div><div class="sub">国産肉中心・節約版</div></div>
+    <div class="amt"><div class="label">1人あたり</div><div class="pp">¥3,271</div></div>
+  </div>
+  <div class="bcat-detail">
+    <div class="bcat-row"><span class="rn">BBQ食材（国産肉中心）</span><span class="rv">¥15,400</span></div>
+    <div class="bcat-row"><span class="rn">炭・着火剤・消耗品</span><span class="rv">¥4,000</span></div>
+    <div class="bcat-row"><span class="rn">朝食材料</span><span class="rv">¥3,500</span></div>
+  </div>
+
+  <!-- ドリンク -->
+  <div class="bcat-hdr" style="background:#8B6914">
+    <div><div class="nm">🍺 ドリンク・酒</div><div class="sub">事前購入で節約</div></div>
+    <div class="amt"><div class="label">1人あたり</div><div class="pp">¥1,500</div></div>
+  </div>
+  <div class="bcat-detail">
+    <div class="bcat-row"><span class="rn">ドリンク・酒（前日コンビニ購入）</span><span class="rv">¥10,500</span></div>
+  </div>
+
+  <!-- 交通 -->
+  <div class="bcat-hdr" style="background:var(--ember)">
+    <div><div class="nm">🚗 交通</div><div class="sub">カーシェア・ガソリン込み</div></div>
+    <div class="amt"><div class="label">1人あたり</div><div class="pp">¥3,851</div></div>
+  </div>
+  <div class="bcat-detail">
+    <div class="bcat-row"><span class="rn">タイムズカーシェア（2日・200km）</span><span class="rv">¥24,500</span></div>
+    <div class="bcat-row"><span class="rn">NOC免除補償（2日分）</span><span class="rv">¥660</span></div>
+    <div class="bcat-row"><span class="rn">ガソリン</span><span class="rv" style="color:#999">¥0（込み）</span></div>
+    <div class="bcat-row"><span class="rn">高速料金（往復ETC）</span><span class="rv">¥1,800</span></div>
+  </div>
+
+  <!-- 合計 -->
+  <div class="btotal">
+    <div class="tl-">合計（7名）</div>
+    <div class="tr">
+      <div class="big">¥129,100</div>
+      <div class="sm">1人あたり ¥18,443</div>
+    </div>
+  </div>
+
+  <!-- 集金 -->
+  <div class="collect-box">
+    <div class="ch">💰 集金プラン</div>
+    <div class="collect-row big"><span>1人 集金額</span><span><b>¥19,000</b></span></div>
+    <div class="collect-row"><span>集金合計（×7名）</span><span><b>¥133,000</b></span></div>
+    <div class="collect-row"><span>予備費・お釣り</span><span><b>¥3,900</b></span></div>
+  </div>
+</section>
+
+<!-- BUY -->
+<section id="buy" class="reveal">
+  <div class="shead"><span class="no">05</span><div><h2>買い出しリスト</h2><div class="jp">タップでチェック</div></div></div>
+  <div class="card">
+    <div class="grouplabel"><span class="em"></span>炭・燃料</div>
+    <ul class="check">
+      <li><span class="box"></span><span class="txt">炭 <b>6〜9kg</b>（3kg×2〜3袋）</span></li>
+      <li><span class="box"></span><span class="txt">着火剤</span></li>
+      <li><span class="box"></span><span class="txt">チャッカマン</span></li>
+    </ul>
+    <div class="grouplabel"><span class="em"></span>肉（節約・国産中心）</div>
+    <ul class="check">
+      <li><span class="box"></span><span class="txt">牛カルビ</span></li>
+      <li><span class="box"></span><span class="txt">豚バラ</span></li>
+      <li><span class="box"></span><span class="txt">厚切りタン</span></li>
+      <li><span class="box"></span><span class="txt">鶏もも</span></li>
+      <li><span class="box"></span><span class="txt">ソーセージ</span></li>
+    </ul>
+    <div class="grouplabel"><span class="em"></span>野菜</div>
+    <ul class="check">
+      <li><span class="box"></span><span class="txt">玉ねぎ ／ ピーマン</span></li>
+      <li><span class="box"></span><span class="txt">とうもろこし ／ しいたけ</span></li>
+      <li><span class="box"></span><span class="txt">じゃがいも ／ キャベツ</span></li>
+    </ul>
+    <div class="grouplabel"><span class="em"></span>〆・その他</div>
+    <ul class="check">
+      <li><span class="box"></span><span class="txt">焼きそば・おにぎり・パン</span></li>
+      <li><span class="box"></span><span class="txt">マシュマロ</span></li>
+      <li><span class="box"></span><span class="txt">焼肉のたれ・塩こしょう・アルミホイル</span></li>
+    </ul>
+    <div class="grouplabel"><span class="em"></span>ドリンク・備品</div>
+    <ul class="check">
+      <li><span class="box"></span><span class="txt"><b>前日に購入</b>：ビール・酎ハイ・ソフトドリンク</span></li>
+      <li><span class="box"></span><span class="txt"><b>氷（大量）</b> ／ クーラーボックス</span></li>
+      <li><span class="box"></span><span class="txt">紙皿・紙コップ・割り箸</span></li>
+      <li><span class="box"></span><span class="txt">ウェットティッシュ ／ ゴミ袋 ／ 軍手</span></li>
+    </ul>
+    <div class="provided">
+      <div class="h">🏕 宿が用意（買わなくてOK）</div>
+      <p>Weberコンロ・網・トング・耐熱グローブ・防炎シート・灰バケツ・屋外ガスコンロ・ホットサンドメーカー・ホットプレート</p>
+    </div>
+  </div>
+</section>
+
+<!-- PACK -->
+<section id="pack" class="reveal">
+  <div class="shead"><span class="no">06</span><div><h2>持ち物（個人）</h2><div class="jp">PACKING</div></div></div>
+  <div class="card">
+    <ul class="check">
+      <li><span class="box"></span><span class="txt">着替え・部屋着</span></li>
+      <li><span class="box"></span><span class="txt"><b>水着・タオル</b>（琵琶湖用）</span></li>
+      <li><span class="box"></span><span class="txt">サンダル</span></li>
+      <li><span class="box"></span><span class="txt">日焼け止め</span></li>
+      <li><span class="box"></span><span class="txt"><b>虫除け・虫刺され薬</b>（必須）</span></li>
+      <li><span class="box"></span><span class="txt">歯ブラシ・洗面用具</span></li>
+      <li><span class="box"></span><span class="txt">保険証・現金</span></li>
+      <li><span class="box"></span><span class="txt">モバイルバッテリー・充電器</span></li>
+      <li><span class="box"></span><span class="txt">酔い止め</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- SPOTS -->
+<section id="spot" class="reveal">
+  <div class="shead"><span class="no">07</span><div><h2>地図・スポット</h2><div class="jp">タップでマップへ</div></div></div>
+  <div class="card" style="padding:6px 16px">
+    <a class="spot" href="https://www.airbnb.jp/rooms/1087917361799796755" target="_blank" rel="noopener">
+      <span class="ic">🏠</span><div><div class="nm">グリーン・ビュー・ロッジ</div><div class="ds">宿泊先・高島市</div></div><span class="go">›</span></a>
+    <a class="spot" href="https://maps.google.com/?cid=17231633910911759236" target="_blank" rel="noopener">
+      <span class="ic">🛒</span><div><div class="nm">平和堂 今津店</div><div class="ds">買い出し・宿から車5分・〜21:00</div></div><span class="go">›</span></a>
+    <a class="spot" href="https://maps.google.com/?cid=17188414135048750316" target="_blank" rel="noopener">
+      <span class="ic">🏖</span><div><div class="nm">今津浜水泳場</div><div class="ds">琵琶湖の水遊び・宿から車7分</div></div><span class="go">›</span></a>
+    <a class="spot" href="https://maps.google.com/?cid=13664484576260554187" target="_blank" rel="noopener">
+      <span class="ic">⛩</span><div><div class="nm">白髭神社</div><div class="ds">湖中大鳥居・帰り道沿い</div></div><span class="go">›</span></a>
+    <a class="spot" href="https://maps.google.com/?cid=13604477247831000687" target="_blank" rel="noopener">
+      <span class="ic">🌲</span><div><div class="nm">メタセコイア並木</div><div class="ds">寄り道スポット・宿から北へ車15分</div></div><span class="go">›</span></a>
+  </div>
+</section>
+
+<!-- TODO -->
+<section id="todo" class="reveal">
+  <div class="shead"><span class="no">08</span><div><h2>TODOリスト</h2><div class="jp">旅行前にやること</div></div></div>
+  <div class="card">
+    <div class="todo-item">
+      <span class="todo-pri pri-high">高</span>
+      <div class="todo-body">
+        <div class="tt">ETCカードを取得する</div>
+        <div class="dl">⏰ 期限：2026年6月20日</div>
+        <div class="nt">申し込みから到着まで1〜2週間。高速（吹田IC⇔京都東IC往復）使用に必要。早めに申し込むこと。</div>
+      </div>
+    </div>
+    <div class="todo-item">
+      <span class="todo-pri pri-high">高</span>
+      <div class="todo-body">
+        <div class="tt">タイムズカーシェアを予約する</div>
+        <div class="dl">⏰ 期限：2026年6月25日</div>
+        <div class="nt">プレミアムクラス。7/3(金) 10:00〜7/4(土) 15:00頃。NOC免除補償オプションも忘れずに追加。</div>
+      </div>
+    </div>
+    <div class="todo-item">
+      <span class="todo-pri pri-high">高</span>
+      <div class="todo-body">
+        <div class="tt">Airbnbキャンセル期限の確認・対応</div>
+        <div class="dl">⏰ 期限：2026年6月29日</div>
+        <div class="nt">キャンセル期限は6月29日。参加者を確定させること。</div>
+      </div>
+    </div>
+    <div class="todo-item">
+      <span class="todo-pri pri-mid">中</span>
+      <div class="todo-body">
+        <div class="tt">ドライバーを決める</div>
+        <div class="dl">⏰ 期限：2026年6月30日</div>
+        <div class="nt">往路・復路で別の人が担当するとBBQで全員飲める。飲酒運転は絶対NG。</div>
+      </div>
+    </div>
+    <div class="todo-item">
+      <span class="todo-pri pri-mid">中</span>
+      <div class="todo-body">
+        <div class="tt">メンバーから参加費を集金する</div>
+        <div class="dl">⏰ 期限：2026年7月1日</div>
+        <div class="nt">1人 ¥19,000。集金合計 ¥133,000。</div>
+      </div>
+    </div>
+    <div class="todo-item">
+      <span class="todo-pri pri-mid">中</span>
+      <div class="todo-body">
+        <div class="tt">買い出しリストを参加者に共有する</div>
+        <div class="dl">⏰ 期限：2026年7月2日</div>
+        <div class="nt">役割分担（ドリンク担当・肉担当など）を事前に決めるとスムーズ。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIPS -->
+<section id="tips" class="reveal">
+  <div class="shead"><span class="no">09</span><div><h2>注意・マナー</h2><div class="jp">RULES</div></div></div>
+  <div class="card">
+    <div class="tip"><span class="mk">🔥</span><div><b>炭と灰は完全に消火</b>してから灰バケツへ。コンロは使用後に洗う。</div></div>
+    <div class="tip"><span class="mk">🚗</span><div><b>ドライバーは飲酒NG。</b>往復で担当を分けると全員飲める。</div></div>
+    <div class="tip"><span class="mk">⛽</span><div>カーシェアは<b>給油カード</b>が備え付け。ガソリンが減ったら給油して返却を。</div></div>
+    <div class="tip"><span class="mk">🦟</span><div>自然豊かなエリア。<b>虫除けスプレー</b>は必ず持参。</div></div>
+    <div class="tip"><span class="mk">🗑</span><div>ゴミは<b>分別</b>。ハウスルールに従って処理すること。</div></div>
+    <div class="tip"><span class="mk">🛍</span><div>スーパーは宿から車5分。<b>買い忘れは早めに</b>。21:00まで営業。</div></div>
+  </div>
+</section>
+
+<footer>
+  <div class="star">✦ ✦ ✦</div>
+  <div class="logo">高島BBQ旅 2026</div>
+  <div class="meta">GREEN VIEW LODGE ・ TAKASHIMA, SHIGA<br>7 MEN ・ 1 NIGHT ・ 7.3 FRI – 7.4 SAT<br>集金 ¥19,000 / 人</div>
+</footer>
+
+</div>
+<script>
+  document.querySelectorAll('ul.check li').forEach(function(li){
+    li.addEventListener('click',function(){ li.classList.toggle('done'); });
+  });
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }});
+  },{threshold:0.12});
+  document.querySelectorAll('.reveal').forEach(function(s){ io.observe(s); });
+  document.querySelectorAll('nav a').forEach(function(a){
+    a.addEventListener('click',function(ev){
+      var t=document.querySelector(a.getAttribute('href'));
+      if(t){ ev.preventDefault(); window.scrollTo({top:t.offsetTop-52,behavior:'smooth'}); }
+    });
+  });
+</script>
+</body>
+</html>
